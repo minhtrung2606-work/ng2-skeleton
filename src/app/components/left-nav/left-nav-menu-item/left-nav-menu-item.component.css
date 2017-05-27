@@ -1,0 +1,42 @@
+/*Component*/
+.left-nav-menu-item-component {
+  position: relative;
+  background-color: #455A64;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+/*Elements in group*/
+.left-nav-menu-item-component .primary-item,
+.left-nav-menu-item-component .secondary-item {
+  display: flex;
+  align-items: center;
+}
+.left-nav-menu-item-component .start-icon,
+.left-nav-menu-item-component .end-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.left-nav-menu-item-component .start-icon,
+.left-nav-menu-item-component .end-icon {
+  min-width: 48px;
+}
+.left-nav-menu-item-component .end-icon {
+  margin-left: auto;
+}
+
+/*Individual element*/
+/*--Primary item*/
+.left-nav-menu-item-component .primary-item,
+.left-nav-menu-item-component .primary-item .start-icon,
+.left-nav-menu-item-component .primary-item .end-icon {
+  min-height: 48px;
+}
+
+/*--Secondary item*/
+.left-nav-menu-item-component .secondary-item,
+.left-nav-menu-item-component .secondary-item .start-icon,
+.left-nav-menu-item-component .secondary-item .end-icon {
+  min-height: 40px;
+}
