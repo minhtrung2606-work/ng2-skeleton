@@ -59,6 +59,9 @@
 .left-nav-menu-item-component.collapsed {
   width: 48px;
 }
+.left-nav-menu-item-component.collapsed .secondary-item {
+  display: none;
+}
 .left-nav-menu-item-component.collapsed .label {
   min-height: 0;
   width: 0;
