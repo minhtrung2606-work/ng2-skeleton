@@ -7,7 +7,7 @@ export class LeftNavMenuItem {
   private count: number;
   private subMenuItemList: Array<LeftNavMenuItem>;
 
-  constructor(label: string, active = false, statistic = false, startIcon?: string, endIcon?: string, count = 0) {
+  constructor(label: string, statistic = false, active = false, startIcon?: string, endIcon?: string, count = 0) {
     this.active = active;
     this.statistic = statistic;
     this.startIcon = startIcon;
