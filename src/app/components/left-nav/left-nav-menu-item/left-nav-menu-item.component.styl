@@ -51,6 +51,18 @@
   opacity 0
   transition min-height 250ms, height 250ms, opacity 250ms
 
+/*---End icon as Statistic*/
+.left-nav-menu-item-component .end-icon.statistic .count
+  background-color #00b0ff
+  color #dbf4ff
+  padding 6px 8px
+  border-radius 50px
+
+.left-nav-menu-item-component .end-icon.statistic
+  align-items flex-end
+  flex-direction column
+  margin-right 8px
+
 /*States*/
 /*--Collapsed*/
 .left-nav-menu-item-component.collapsed
@@ -99,3 +111,6 @@
   min-height LEFT_NAV_MENU_ITEM_SECONDARY_HEIGHT
   opacity 1
   transition min-height 250ms, height 250ms, opacity 250ms
+
+.left-nav-menu-item-component .secondary-item.active .end-icon.statistic .count
+  box-shadow 0 0 0 1px LEFT_NAV_MENU_ITEM_SECONDARY_ACTIVE_TEXT_COLOR;
