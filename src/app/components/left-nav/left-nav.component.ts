@@ -23,9 +23,7 @@ export class LeftNavComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.menuItem
-      .setStartIcon('fa-file')
-    ;
+    this.menuItem.setStartIcon('fa-file');
 
     let appraisalProfile = new LeftNavMenuItem('Appraisal Profile');
     var subMenuItemIcon = 'fa-angle-right';
@@ -42,7 +40,7 @@ export class LeftNavComponent implements OnInit {
 
     this.menuItemList.push(this.menuItem);
 
-    let anotherMenuItem = new LeftNavMenuItem('Debt');
+    let anotherMenuItem = new LeftNavMenuItem('Debt').setStartIcon('fa-suitcase');
     let debtProfile = new LeftNavMenuItem('Debt Profile').setStartIcon(subMenuItemIcon);
     let paidProfile = new LeftNavMenuItem('Paid Profile').setStartIcon(subMenuItemIcon);
 
