@@ -117,3 +117,9 @@
 .left-nav-menu-item-component .secondary-item.active .end-icon.statistic .count {
   box-shadow: 0 0 0 1px #dbf4ff;
 }
+/*Collapse mixed with active*/
+.left-nav-menu-item-component.active.collapsed .primary-item,
+.left-nav-menu-item-component.collapsed .primary-item:hover {
+  background: initial;
+  color: #6c7c83;
+}
