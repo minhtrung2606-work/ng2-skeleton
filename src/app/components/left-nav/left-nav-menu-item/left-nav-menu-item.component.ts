@@ -33,4 +33,12 @@ export class LeftNavMenuItemComponent implements OnInit {
     ;
   }
 
+  onPrimaryItemClicked(menuItem: LeftNavMenuItem): void {
+    menuItem.setActive(!menuItem.isActive());
+  }
+
+  onSecondaryItemClicked(subMenuItem: LeftNavMenuItem): void {
+    subMenuItem.setActive(!subMenuItem.isActive());
+  }
+
 }

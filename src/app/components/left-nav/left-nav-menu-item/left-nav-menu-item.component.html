@@ -1,5 +1,5 @@
 <div class="left-nav-menu-item-component" [ngClass]="{'active': menuItem.isActive()}">
-  <div class="primary-item">
+  <div class="primary-item" (click)="onPrimaryItemClicked(menuItem)">
     <span class="start-icon"><i class="fa {{menuItem.getStartIcon()}}"></i></span>
     <span class="label">{{menuItem.getLabel()}}</span>
     <span class="end-icon">
@@ -7,6 +7,7 @@
     </span>
   </div>
   <div class="secondary-item"
+       (click)="onSecondaryItemClicked(subMenuItem)"
        [ngClass]="{'active': subMenuItem.isActive()}"
        *ngFor="let subMenuItem of menuItem.getSubMenuItemList()">
     <span class="start-icon"><i class="fa {{subMenuItem.getStartIcon()}}"></i></span>
