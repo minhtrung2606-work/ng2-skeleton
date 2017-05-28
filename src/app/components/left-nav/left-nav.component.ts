@@ -51,6 +51,11 @@ export class LeftNavComponent implements OnInit {
   }
 
   onLeftNavMenuItemClicked(menuItem: LeftNavMenuItem): void {
+    if (this.collapsed) {
+      // Do nothing when collapsed
+      return;
+    }
+
     if (menuItem.isActive()) {
       // Activated menu item is clicked again and de-activate it
       menuItem
