@@ -18,7 +18,6 @@ export class LeftNavComponent implements OnInit {
   ngOnInit() {
     this.menuItem
       .setStartIcon('fa-file')
-      .setEndIcon('fa-angle-right')
     ;
 
     let appraisalProfile = new LeftNavMenuItem('Appraisal Profile');
@@ -39,7 +38,6 @@ export class LeftNavComponent implements OnInit {
       // Activated menu item is clicked again and de-activate it
       menuItem
         .setActive(false)
-        .setEndIcon('fa-angle-right')
       ;
       return;
     }
@@ -48,7 +46,6 @@ export class LeftNavComponent implements OnInit {
       // Remove current active menu item before activating another one
       this.currentMenuItem
         .setActive(false)
-        .setEndIcon('fa-angle-right')
       ;
     }
 
@@ -56,7 +53,6 @@ export class LeftNavComponent implements OnInit {
     this.currentMenuItem =  menuItem;
     this.currentMenuItem
       .setActive(true)
-      .setEndIcon('fa-angle-down')
     ;
   }
 

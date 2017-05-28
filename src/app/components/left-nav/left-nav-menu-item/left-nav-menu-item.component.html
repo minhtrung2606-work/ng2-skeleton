@@ -3,7 +3,7 @@
     <span class="start-icon"><i class="fa {{menuItem.getStartIcon()}}"></i></span>
     <span class="label">{{menuItem.getLabel()}}</span>
     <span class="end-icon">
-      <i class="fa {{menuItem.getEndIcon()}}"></i>
+      <i class="fa" [ngClass]="{'fa-angle-down': menuItem.isActive(), 'fa-angle-right': !menuItem.isActive()}"></i>
     </span>
   </div>
   <div class="secondary-item"
