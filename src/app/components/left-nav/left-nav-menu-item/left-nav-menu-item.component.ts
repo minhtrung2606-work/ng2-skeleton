@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { LeftNavMenuItem } from './model/left-nav-menu-item';
 
 @Component({
@@ -7,38 +7,24 @@ import { LeftNavMenuItem } from './model/left-nav-menu-item';
   styleUrls: ['./left-nav-menu-item.component.css']
 })
 export class LeftNavMenuItemComponent implements OnInit {
-  private menuItem: LeftNavMenuItem;
+  @Input() menuItem: LeftNavMenuItem;
+  @Output() onMenuItemClicked: EventEmitter<LeftNavMenuItem>;
+  @Output() onSubMenuItemClicked: EventEmitter<LeftNavMenuItem>;
 
   constructor() {
-    this.menuItem = new LeftNavMenuItem('Profile');
+    this.onMenuItemClicked = new EventEmitter();
+    this.onSubMenuItemClicked = new EventEmitter();
   }
 
   ngOnInit() {
-    this.menuItem
-      .setStartIcon('fa-file')
-      .setEndIcon('fa-angle-right')
-      .setActive(true)
-    ;
-
-    let appraisalProfile = new LeftNavMenuItem('Appraisal Profile');
-    appraisalProfile
-      .setStartIcon('fa-angle-right')
-      .setStatistic(true)
-      .setCount(12)
-    ;
-
-    this.menuItem
-      .addSubMenuItem(appraisalProfile)
-      .addSubMenuItem(new LeftNavMenuItem('Pending Approval').setStartIcon('fa-angle-right'))
-    ;
   }
 
   onPrimaryItemClicked(menuItem: LeftNavMenuItem): void {
-    menuItem.setActive(!menuItem.isActive());
+    this.onMenuItemClicked.emit(menuItem);
   }
 
   onSecondaryItemClicked(subMenuItem: LeftNavMenuItem): void {
-    subMenuItem.setActive(!subMenuItem.isActive());
+    this.onSubMenuItemClicked.emit(subMenuItem);
   }
 
 }
