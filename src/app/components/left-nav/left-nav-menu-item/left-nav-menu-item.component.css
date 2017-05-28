@@ -82,12 +82,12 @@
   transition: all 250ms !important;
 }
 .left-nav-menu-item-component.active .primary-item {
-  background: #0288d1;
-  color: #fff;
+  background: #00b0ff;
+  color: #dbf4ff;
 }
 .left-nav-menu-item-component .secondary-item.active {
-  background: #01579b;
-  color: #fff;
+  background: #0091ea;
+  color: #d9e3e8;
 }
 .left-nav-menu-item-component.active .secondary-item,
 .left-nav-menu-item-component.active .secondary-item .start-icon,
