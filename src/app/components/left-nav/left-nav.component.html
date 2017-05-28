@@ -1,15 +1,10 @@
-<div class="left-nav-component">
-  <div class="left-nav-menu-item-list" [ngClass]="{'collapsed': collapsed}">
-    <left-nav-menu-item *ngFor="let menuItem of menuItemList"
-                        [menuItem]="menuItem"
-                        [activeIcon]="activeIcon"
-                        [inActiveIcon]="inActiveIcon"
-                        [collapsed]="collapsed"
-                        (onMenuItemClicked)="onLeftNavMenuItemClicked($event)"
-                        (onSubMenuItemClicked)="onLeftNavSubMenuItemClicked($event)">
-    </left-nav-menu-item>
-  </div>
-  <small *ngIf="menuItemList.length === 0">
-    <em>No item in the list</em>
-  </small>
+<div class="left-nav-component" [ngClass]="{'collapsed': collapsed}">
+  <left-nav-menu-item *ngFor="let menuItem of menuItemList"
+                      [menuItem]="menuItem"
+                      [activeIcon]="activeIcon"
+                      [inActiveIcon]="inActiveIcon"
+                      [collapsed]="collapsed"
+                      (onMenuItemClicked)="onLeftNavMenuItemClicked($event)"
+                      (onSubMenuItemClicked)="onLeftNavSubMenuItemClicked($event)">
+  </left-nav-menu-item>
 </div>

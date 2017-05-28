@@ -9,22 +9,17 @@ import { LeftNavMenuItem } from './left-nav-menu-item/model/left-nav-menu-item';
 export class LeftNavComponent implements OnInit {
   private currentMenuItem: LeftNavMenuItem;
   private currentSubMenuItem: LeftNavMenuItem;
-  private activeIcon: string;
-  private inActiveIcon: string;
 
+  @Input() activeIcon: string;
+  @Input() inActiveIcon: string;
   @Input() collapsed: boolean;
   @Input() menuItemList: Array<LeftNavMenuItem>;
 
-  constructor() {
-    this.activeIcon = 'fa-minus-circle';
-    this.inActiveIcon = 'fa-plus-circle';
-  }
+  constructor() { }
 
   ngOnInit() {
     if (!this.menuItemList) {
-      this.menuItemList = [
-        new LeftNavMenuItem('Item 1')
-      ];
+      this.menuItemList = [];
     }
   }
 
