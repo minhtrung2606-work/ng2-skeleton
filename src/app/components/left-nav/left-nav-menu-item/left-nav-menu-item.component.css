@@ -2,6 +2,7 @@
 .left-nav-menu-item-component {
   position: relative;
   display: inline-block;
+  width: 100%;
 }
 
 /*Elements in group*/
@@ -9,16 +10,17 @@
 .left-nav-menu-item-component .secondary-item {
   display: flex;
   align-items: center;
-  background-color: #455A64;
-  color: #FFFFFF;
+  background-color: #282f32;
+  color: #6c7c83;
+  font-size: 12px;
   cursor: pointer;
 }
 .left-nav-menu-item-component .label {
-  width: 154px;
+  width: calc(100% - 96px);
   opacity: 1;
   display: flex;
   align-items: center;
-  transition: width 250ms, font-size 0ms 250ms, opacity 250ms;
+  transition: width 250ms, font-size 0ms 250ms, opacity 150ms;
 }
 .left-nav-menu-item-component .start-icon,
 .left-nav-menu-item-component .end-icon {
@@ -55,6 +57,7 @@
 /*States*/
 /*--Collapsed*/
 .left-nav-menu-item-component.collapsed {
+  width: 48px;
 }
 .left-nav-menu-item-component.collapsed .label {
   min-height: 0;
@@ -62,6 +65,9 @@
   height: 0;
   opacity: 0;
   font-size: 0;
+}
+.left-nav-menu-item-component.collapsed,
+.left-nav-menu-item-component.collapsed .label {
   transition: width 250ms;
 }
 .left-nav-menu-item-component.collapsed .end-icon {
