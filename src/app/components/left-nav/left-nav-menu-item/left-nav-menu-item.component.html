@@ -1,7 +1,9 @@
 <div class="left-nav-menu-item-component"
      [ngClass]="{'active': menuItem.isActive(), 'collapsed': collapsed}">
   <div class="primary-item" (click)="onPrimaryItemClicked(menuItem)">
-    <span class="start-icon"><i class="fa {{menuItem.getStartIcon()}}"></i></span>
+    <span class="start-icon">
+      <i class="fa {{menuItem.getStartIcon() || 'fa-th-large'}}"></i>
+    </span>
     <span class="label">{{menuItem.getLabel()}}</span>
     <span *ngIf="!menuItem.isStatistic()" class="end-icon">
       <i class="fa {{getPrimaryItemEndIcon()}}"></i>
