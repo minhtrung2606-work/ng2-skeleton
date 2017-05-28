@@ -1,0 +1,100 @@
+@import './left-nav-menu-item.theme';
+
+/*Component*/
+.left-nav-menu-item-component
+  position relative
+  display inline-block
+  width 100%
+
+/*Elements in group*/
+.left-nav-menu-item-component .primary-item
+.left-nav-menu-item-component .secondary-item
+  display flex
+  align-items center
+  background-color LEFT_NAV_MENU_ITEM_ORD_BG_COLOR
+  color LEFT_NAV_MENU_ITEM_ORD_TEXT_COLOR
+  font-size LEFT_NAV_MENU_ITEM_FONT_SIZE
+  cursor pointer
+
+.left-nav-menu-item-component .label
+  width "calc(100% - %s)" % ((LEFT_NAV_MENU_ITEM_ICON_WIDTH_VALUE * 2)px)
+  opacity 1
+  display flex
+  align-items center
+  transition width 250ms, font-size 0ms 250ms, opacity 150ms
+
+.left-nav-menu-item-component .start-icon
+.left-nav-menu-item-component .end-icon
+  display flex
+  align-items center
+  justify-content center
+
+.left-nav-menu-item-component .start-icon
+.left-nav-menu-item-component .end-icon
+  min-width LEFT_NAV_MENU_ITEM_ICON_WIDTH
+
+/*Individual element*/
+/*--Primary item*/
+.left-nav-menu-item-component .primary-item
+.left-nav-menu-item-component .primary-item .start-icon
+.left-nav-menu-item-component .primary-item .label
+.left-nav-menu-item-component .primary-item .end-icon
+  min-height LEFT_NAV_MENU_ITEM_PRIMARY_HEIGHT
+
+/*--Secondary item*/
+.left-nav-menu-item-component .secondary-item
+.left-nav-menu-item-component .secondary-item .start-icon
+.left-nav-menu-item-component .secondary-item .label
+.left-nav-menu-item-component .secondary-item .end-icon
+  height 0
+  min-height 0
+  opacity 0
+  transition min-height 250ms, height 250ms, opacity 250ms
+
+/*States*/
+/*--Collapsed*/
+.left-nav-menu-item-component.collapsed
+  width LEFT_NAV_MENU_ITEM_ICON_WIDTH
+
+.left-nav-menu-item-component.collapsed .secondary-item
+  display none
+
+.left-nav-menu-item-component.collapsed .label
+  min-height 0
+  width 0
+  height 0
+  opacity 0
+  font-size 0
+
+.left-nav-menu-item-component.collapsed
+.left-nav-menu-item-component.collapsed .label
+  transition width 250ms
+
+.left-nav-menu-item-component.collapsed .end-icon
+  min-width 0
+  min-height 0 !important
+  width 0
+  height 0
+  opacity 0
+
+/*Active*/
+.left-nav-menu-item-component.active .primary-item
+.left-nav-menu-item-component .secondary-item.active
+  font-weight bold
+  transition all 250ms !important
+
+.left-nav-menu-item-component.active .primary-item
+  background LEFT_NAV_MENU_ITEM_PRIMARY_ACTIVE_BG_COLOR
+  color LEFT_NAV_MENU_ITEM_PRIMARY_ACTIVE_TEXT_COLOR
+
+.left-nav-menu-item-component .secondary-item.active
+  background LEFT_NAV_MENU_ITEM_SECONDARY_ACTIVE_BG_COLOR
+  color LEFT_NAV_MENU_ITEM_SECONDARY_ACTIVE_TEXT_COLOR
+
+.left-nav-menu-item-component.active .secondary-item
+.left-nav-menu-item-component.active .secondary-item .start-icon
+.left-nav-menu-item-component.active .secondary-item .label
+.left-nav-menu-item-component.active .secondary-item .end-icon
+  min-height LEFT_NAV_MENU_ITEM_SECONDARY_HEIGHT
+  opacity 1
+  transition min-height 250ms, height 250ms, opacity 250ms
