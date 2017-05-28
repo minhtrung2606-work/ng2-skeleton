@@ -19,8 +19,16 @@ export class LeftNavMenuItemComponent implements OnInit {
       .setEndIcon('fa-angle-right')
       .setActive(true)
     ;
+
+    let appraisalProfile = new LeftNavMenuItem('Appraisal Profile');
+    appraisalProfile
+      .setStartIcon('fa-angle-right')
+      .setStatistic(true)
+      .setCount(12)
+    ;
+
     this.menuItem
-      .addSubMenuItem(new LeftNavMenuItem('Appraisal Profile').setStartIcon('fa-angle-right'))
+      .addSubMenuItem(appraisalProfile)
       .addSubMenuItem(new LeftNavMenuItem('Pending Approval').setStartIcon('fa-angle-right'))
     ;
   }
