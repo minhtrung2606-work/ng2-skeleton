@@ -37,21 +37,20 @@
 /*--Primary item*/
 .left-nav-menu-item-component .primary-item,
 .left-nav-menu-item-component .primary-item .start-icon,
+.left-nav-menu-item-component .primary-item .label,
 .left-nav-menu-item-component .primary-item .end-icon {
-  min-height: 48px;
-}
-.left-nav-menu-item-component .primary-item .label {
   min-height: 48px;
 }
 
 /*--Secondary item*/
 .left-nav-menu-item-component .secondary-item,
 .left-nav-menu-item-component .secondary-item .start-icon,
+.left-nav-menu-item-component .secondary-item .label,
 .left-nav-menu-item-component .secondary-item .end-icon {
-  min-height: 40px;
-}
-.left-nav-menu-item-component .secondary-item .label {
-  min-height: 40px;
+  height: 0;
+  min-height: 0;
+  opacity: 0;
+  transition: min-height 250ms, height 250ms, opacity 250ms;
 }
 
 /*States*/
@@ -79,4 +78,14 @@
   width: 0;
   height: 0;
   opacity: 0;
+}
+
+/*Active*/
+.left-nav-menu-item-component.active .secondary-item,
+.left-nav-menu-item-component.active .secondary-item .start-icon,
+.left-nav-menu-item-component.active .secondary-item .label,
+.left-nav-menu-item-component.active .secondary-item .end-icon {
+  min-height: 40px;
+  opacity: 1;
+  transition: min-height 250ms, height 250ms, opacity 250ms;
 }
