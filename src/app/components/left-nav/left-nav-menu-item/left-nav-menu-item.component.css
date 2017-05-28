@@ -1,7 +1,6 @@
 /*Component*/
 .left-nav-menu-item-component {
   position: relative;
-  display: inline-block;
 }
 
 /*Elements in group*/
@@ -14,9 +13,7 @@
   cursor: pointer;
 }
 .left-nav-menu-item-component .label {
-  width: 154px;
   opacity: 1;
-  transition: width 250ms;
   display: flex;
   align-items: center;
 }
@@ -29,6 +26,9 @@
 .left-nav-menu-item-component .start-icon,
 .left-nav-menu-item-component .end-icon {
   min-width: 48px;
+}
+.left-nav-menu-item-component .end-icon {
+  margin-left: auto;
 }
 
 /*Individual element*/
@@ -61,7 +61,6 @@
   width: 0;
   height: 0;
   opacity: 0;
-  transition: width 250ms;
 }
 .left-nav-menu-item-component.collapsed .end-icon {
   min-width: 0;
