@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { LeftNavMenuItem } from './left-nav-menu-item/model/left-nav-menu-item';
 
 @Component({
@@ -7,47 +7,25 @@ import { LeftNavMenuItem } from './left-nav-menu-item/model/left-nav-menu-item';
   styleUrls: ['./left-nav.component.css']
 })
 export class LeftNavComponent implements OnInit {
-  private menuItem: LeftNavMenuItem;
   private currentMenuItem: LeftNavMenuItem;
   private currentSubMenuItem: LeftNavMenuItem;
   private activeIcon: string;
   private inActiveIcon: string;
-  private collapsed: boolean;
 
-  private menuItemList: Array<LeftNavMenuItem>;
+  @Input() collapsed: boolean;
+  @Input() menuItemList: Array<LeftNavMenuItem>;
 
   constructor() {
-    this.menuItem = new LeftNavMenuItem('Profile');
     this.activeIcon = 'fa-minus-circle';
     this.inActiveIcon = 'fa-plus-circle';
-    this.menuItemList = [];
-    this.collapsed = false;
   }
 
   ngOnInit() {
-    this.menuItem.setStartIcon('fa-file');
-
-    let appraisalProfile = new LeftNavMenuItem('Appraisal Profile');
-    appraisalProfile
-      .setStatistic(true)
-      .setCount(12)
-    ;
-
-    this.menuItem
-      .addSubMenuItem(appraisalProfile)
-      .addSubMenuItem(new LeftNavMenuItem('Pending Approval'))
-    ;
-
-    this.menuItemList.push(this.menuItem);
-
-    let anotherMenuItem = new LeftNavMenuItem('Debt').setStartIcon('fa-suitcase');
-    let debtProfile = new LeftNavMenuItem('Debt Profile');
-    let paidProfile = new LeftNavMenuItem('Paid Profile');
-
-    anotherMenuItem.addSubMenuItem(debtProfile);
-    anotherMenuItem.addSubMenuItem(paidProfile);
-
-    this.menuItemList.push(anotherMenuItem);
+    if (!this.menuItemList) {
+      this.menuItemList = [
+        new LeftNavMenuItem('Item 1')
+      ];
+    }
   }
 
   onLeftNavMenuItemClicked(menuItem: LeftNavMenuItem): void {

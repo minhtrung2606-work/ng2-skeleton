@@ -9,5 +9,7 @@
                         (onSubMenuItemClicked)="onLeftNavSubMenuItemClicked($event)">
     </left-nav-menu-item>
   </div>
-  <button (click)="toggleCollapse()"><i class="fa fa-bars fa-lg"></i></button>
+  <small *ngIf="menuItemList.length === 0">
+    <em>No item in the list</em>
+  </small>
 </div>
