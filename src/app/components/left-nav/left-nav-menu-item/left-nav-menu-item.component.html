@@ -1,12 +1,21 @@
-<div class="left-nav-menu-item-component">
-  <div [ngClass]="{'primary-item': menuItem.isPrimary(), 'secondary-item': !menuItem.isPrimary()}">
+<div class="left-nav-menu-item-component" [ngClass]="{'active': menuItem.isActive()}">
+  <div class="primary-item">
     <span class="start-icon"><i class="fa {{menuItem.getStartIcon()}}"></i></span>
     <span class="label">{{menuItem.getLabel()}}</span>
-    <span *ngIf="!menuItem.isStatistic()" class="end-icon">
+    <span class="end-icon">
       <i class="fa {{menuItem.getEndIcon()}}"></i>
     </span>
-    <span *ngIf="menuItem.isStatistic()" class="end-icon statistic">
-      <small class="count">{{menuItem.getCount()}}</small>
+  </div>
+  <div class="secondary-item"
+       [ngClass]="{'active': subMenuItem.isActive()}"
+       *ngFor="let subMenuItem of menuItem.getSubMenuItemList()">
+    <span class="start-icon"><i class="fa {{subMenuItem.getStartIcon()}}"></i></span>
+    <span class="label">{{subMenuItem.getLabel()}}</span>
+    <span *ngIf="!subMenuItem.isStatistic()" class="end-icon">
+      <i class="fa {{subMenuItem.getEndIcon()}}"></i>
+    </span>
+    <span *ngIf="subMenuItem.isStatistic()" class="end-icon statistic">
+      <small class="count">{{subMenuItem.getCount()}}</small>
     </span>
   </div>
 </div>

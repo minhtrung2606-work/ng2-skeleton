@@ -17,6 +17,11 @@ export class LeftNavMenuItemComponent implements OnInit {
     this.menuItem
       .setStartIcon('fa-file')
       .setEndIcon('fa-angle-right')
+      .setActive(true)
+    ;
+    this.menuItem
+      .addSubMenuItem(new LeftNavMenuItem('Appraisal Profile').setStartIcon('fa-angle-right'))
+      .addSubMenuItem(new LeftNavMenuItem('Pending Approval').setStartIcon('fa-angle-right'))
     ;
   }
 
