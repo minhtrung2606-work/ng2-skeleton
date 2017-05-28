@@ -12,6 +12,7 @@ export class LeftNavComponent implements OnInit {
   private currentSubMenuItem: LeftNavMenuItem;
   private activeIcon: string;
   private inActiveIcon: string;
+  private collapsed: boolean;
 
   private menuItemList: Array<LeftNavMenuItem>;
 
@@ -20,6 +21,7 @@ export class LeftNavComponent implements OnInit {
     this.activeIcon = 'fa-minus-circle';
     this.inActiveIcon = 'fa-plus-circle';
     this.menuItemList = [];
+    this.collapsed = false;
   }
 
   ngOnInit() {
@@ -84,6 +86,10 @@ export class LeftNavComponent implements OnInit {
     this.currentSubMenuItem
       .setActive(true)
     ;
+  }
+
+  toggleCollapse(): void {
+    this.collapsed = !this.collapsed;
   }
 
 }

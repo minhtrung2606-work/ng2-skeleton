@@ -1,4 +1,12 @@
 .left-nav-component {
+  display: flex;
+  align-items: flex-start;
+}
+.left-nav-component .left-nav-menu-item-list {
   background-color: #282f32;
-  max-width: 250px;
+  width: 250px;
+}
+.left-nav-component .left-nav-menu-item-list.collapsed {
+  width: 48px;
+  transition: width 250ms;
 }
