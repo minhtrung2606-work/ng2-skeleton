@@ -10,9 +10,13 @@ export class LeftNavComponent implements OnInit {
   private menuItem: LeftNavMenuItem;
   private currentMenuItem: LeftNavMenuItem;
   private currentSubMenuItem: LeftNavMenuItem;
+  private activeIcon: string;
+  private inActiveIcon: string;
 
   constructor() {
     this.menuItem = new LeftNavMenuItem('Profile');
+    this.activeIcon = 'fa-minus-circle';
+    this.inActiveIcon = 'fa-plus-circle';
   }
 
   ngOnInit() {

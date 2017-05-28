@@ -1,5 +1,7 @@
 <div class="left-nav-component">
   <left-nav-menu-item [menuItem]="menuItem"
+                      [activeIcon]="activeIcon"
+                      [inActiveIcon]="inActiveIcon"
                       (onMenuItemClicked)="onLeftNavMenuItemClicked($event)"
                       (onSubMenuItemClicked)="onLeftNavSubMenuItemClicked($event)">
   </left-nav-menu-item>
