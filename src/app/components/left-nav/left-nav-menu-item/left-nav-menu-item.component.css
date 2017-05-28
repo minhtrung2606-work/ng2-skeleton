@@ -81,6 +81,12 @@
 }
 
 /*Active*/
+.left-nav-menu-item-component.active .primary-item {
+  background: #0288D1;
+  color: #ffffff;
+  font-weight: bold;
+  transition: all 250ms;
+}
 .left-nav-menu-item-component.active .secondary-item,
 .left-nav-menu-item-component.active .secondary-item .start-icon,
 .left-nav-menu-item-component.active .secondary-item .label,
