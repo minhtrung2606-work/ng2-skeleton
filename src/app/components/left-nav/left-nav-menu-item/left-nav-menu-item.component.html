@@ -13,7 +13,9 @@
        (click)="onSecondaryItemClicked(subMenuItem)"
        [ngClass]="{'active': subMenuItem.isActive()}"
        *ngFor="let subMenuItem of menuItem.getSubMenuItemList()">
-    <span class="start-icon"><i class="fa {{subMenuItem.getStartIcon()}}"></i></span>
+    <span class="start-icon">
+      <i class="fa {{subMenuItem.getStartIcon() || 'fa-angle-right'}}"></i>
+    </span>
     <span class="label">{{subMenuItem.getLabel()}}</span>
     <span *ngIf="!subMenuItem.isStatistic()" class="end-icon">
       <i class="fa {{subMenuItem.getEndIcon()}}"></i>

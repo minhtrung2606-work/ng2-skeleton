@@ -26,23 +26,21 @@ export class LeftNavComponent implements OnInit {
     this.menuItem.setStartIcon('fa-file');
 
     let appraisalProfile = new LeftNavMenuItem('Appraisal Profile');
-    var subMenuItemIcon = 'fa-angle-right';
     appraisalProfile
-      .setStartIcon(subMenuItemIcon)
       .setStatistic(true)
       .setCount(12)
     ;
 
     this.menuItem
       .addSubMenuItem(appraisalProfile)
-      .addSubMenuItem(new LeftNavMenuItem('Pending Approval').setStartIcon(subMenuItemIcon))
+      .addSubMenuItem(new LeftNavMenuItem('Pending Approval'))
     ;
 
     this.menuItemList.push(this.menuItem);
 
     let anotherMenuItem = new LeftNavMenuItem('Debt').setStartIcon('fa-suitcase');
-    let debtProfile = new LeftNavMenuItem('Debt Profile').setStartIcon(subMenuItemIcon);
-    let paidProfile = new LeftNavMenuItem('Paid Profile').setStartIcon(subMenuItemIcon);
+    let debtProfile = new LeftNavMenuItem('Debt Profile');
+    let paidProfile = new LeftNavMenuItem('Paid Profile');
 
     anotherMenuItem.addSubMenuItem(debtProfile);
     anotherMenuItem.addSubMenuItem(paidProfile);
