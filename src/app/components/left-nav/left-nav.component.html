@@ -1,5 +1,6 @@
 <div class="left-nav-component">
-  <left-nav-menu-item [menuItem]="menuItem"
+  <left-nav-menu-item *ngFor="let menuItem of menuItemList"
+                      [menuItem]="menuItem"
                       [activeIcon]="activeIcon"
                       [inActiveIcon]="inActiveIcon"
                       (onMenuItemClicked)="onLeftNavMenuItemClicked($event)"

@@ -13,10 +13,13 @@ export class LeftNavComponent implements OnInit {
   private activeIcon: string;
   private inActiveIcon: string;
 
+  private menuItemList: Array<LeftNavMenuItem>;
+
   constructor() {
     this.menuItem = new LeftNavMenuItem('Profile');
     this.activeIcon = 'fa-minus-circle';
     this.inActiveIcon = 'fa-plus-circle';
+    this.menuItemList = [];
   }
 
   ngOnInit() {
@@ -25,16 +28,28 @@ export class LeftNavComponent implements OnInit {
     ;
 
     let appraisalProfile = new LeftNavMenuItem('Appraisal Profile');
+    var subMenuItemIcon = 'fa-angle-right';
     appraisalProfile
-      .setStartIcon('fa-angle-right')
+      .setStartIcon(subMenuItemIcon)
       .setStatistic(true)
       .setCount(12)
     ;
 
     this.menuItem
       .addSubMenuItem(appraisalProfile)
-      .addSubMenuItem(new LeftNavMenuItem('Pending Approval').setStartIcon('fa-angle-right'))
+      .addSubMenuItem(new LeftNavMenuItem('Pending Approval').setStartIcon(subMenuItemIcon))
     ;
+
+    this.menuItemList.push(this.menuItem);
+
+    let anotherMenuItem = new LeftNavMenuItem('Debt');
+    let debtProfile = new LeftNavMenuItem('Debt Profile').setStartIcon(subMenuItemIcon);
+    let paidProfile = new LeftNavMenuItem('Paid Profile').setStartIcon(subMenuItemIcon);
+
+    anotherMenuItem.addSubMenuItem(debtProfile);
+    anotherMenuItem.addSubMenuItem(paidProfile);
+
+    this.menuItemList.push(anotherMenuItem);
   }
 
   onLeftNavMenuItemClicked(menuItem: LeftNavMenuItem): void {
