@@ -2,8 +2,11 @@
   <div class="primary-item" (click)="onPrimaryItemClicked(menuItem)">
     <span class="start-icon"><i class="fa {{menuItem.getStartIcon()}}"></i></span>
     <span class="label">{{menuItem.getLabel()}}</span>
-    <span class="end-icon">
+    <span *ngIf="!menuItem.isStatistic()" class="end-icon">
       <i class="fa {{getPrimaryItemEndIcon()}}"></i>
+    </span>
+    <span *ngIf="menuItem.isStatistic()" class="end-icon statistic">
+      <small class="count">{{menuItem.getCount()}}</small>
     </span>
   </div>
   <div class="secondary-item"
