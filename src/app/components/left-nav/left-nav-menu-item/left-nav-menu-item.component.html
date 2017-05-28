@@ -1,16 +1,12 @@
-<div class="left-nav-menu-item-component active">
-  <div class="primary-item">
-    <span class="start-icon"><i class="fa fa-circle"></i></span>
-    <span class="label">Primary menu item 1</span>
-    <span class="end-icon"><i class="fa fa-plus-circle"></i></span>
-  </div>
-  <div class="secondary-item">
-    <span class="start-icon"><i class="fa fa-angle-right"></i></span>
-    <span class="label">Secondary menu item 11</span>
-  </div>
-  <div class="secondary-item">
-    <span class="start-icon"><i class="fa fa-angle-right"></i></span>
-    <span class="label">Secondary menu item 12</span>
-    <span class="end-icon statistic"><small class="count">12</small></span>
+<div class="left-nav-menu-item-component">
+  <div [ngClass]="{'primary-item': menuItem.isPrimary(), 'secondary-item': !menuItem.isPrimary()}">
+    <span class="start-icon"><i class="fa {{menuItem.getStartIcon()}}"></i></span>
+    <span class="label">{{menuItem.getLabel()}}</span>
+    <span *ngIf="!menuItem.isStatistic()" class="end-icon">
+      <i class="fa {{menuItem.getEndIcon()}}"></i>
+    </span>
+    <span *ngIf="menuItem.isStatistic()" class="end-icon statistic">
+      <small class="count">{{menuItem.getCount()}}</small>
+    </span>
   </div>
 </div>

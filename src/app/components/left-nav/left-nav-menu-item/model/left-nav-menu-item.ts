@@ -51,20 +51,11 @@ export class LeftNavMenuItem {
     return this;
   }
 
-  getLabel(): string {
-    return this.label;
-  }
-
-  setLabel(label: string): LeftNavMenuItem {
-    this.label = label;
-    return this;
-  }
-
   getEndIcon(): string {
     return this.endIcon;
   }
 
-  setEndIon(endIcon: string): LeftNavMenuItem {
+  setEndIcon(endIcon: string): LeftNavMenuItem {
     this.endIcon = endIcon;
     return this;
   }
