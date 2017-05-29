@@ -115,7 +115,7 @@
   height: auto;
   min-height: 40px;
   opacity: 1;
-  transition: min-height 250ms, height 250ms, opacity 250ms;
+  transition: min-height 150ms, height 1000ms 250ms, opacity 500ms;
 }
 .left-nav-menu-item-component.active .primary-item .end-icon.statistic .count {
   box-shadow: 0 0 0 1px #d9e3e8;
