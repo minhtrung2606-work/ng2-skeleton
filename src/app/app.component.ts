@@ -52,7 +52,13 @@ function getElectronicProductsCategory() {
         { label: 'MAC', count: 12 },
         { label: 'Dell', count: 7 },
         { label: 'Asus', count: 6 },
-        { label: 'Asus', count: 2 }
+        { label: 'Others', count: 2 }
+      ]},
+    { icon: 'fa-tablet', label: 'Table', count: 12,
+      itemList: [
+        { label: 'iPad', count: 7 },
+        { label: 'Samsung', count: 1 },
+        { label: 'Others', count: 4 },
       ]}
   ];
 }

@@ -10,10 +10,16 @@
 .left-nav-menu-item-component .secondary-item
   display flex
   align-items center
-  background-color LEFT_NAV_MENU_ITEM_ORD_BG_COLOR
-  color LEFT_NAV_MENU_ITEM_ORD_TEXT_COLOR
   font-size LEFT_NAV_MENU_ITEM_FONT_SIZE
   cursor pointer
+
+.left-nav-menu-item-component .primary-item
+  background-color LEFT_NAV_MENU_ITEM_PRIMARY_ORD_BG_COLOR
+  color LEFT_NAV_MENU_ITEM_PRIMARY_ORD_TEXT_COLOR
+
+.left-nav-menu-item-component .secondary-item
+  background-color LEFT_NAV_MENU_ITEM_SECONDARY_ORD_BG_COLOR
+  color LEFT_NAV_MENU_ITEM_SECONDARY_ORD_TEXT_COLOR
 
 .left-nav-menu-item-component .label
   width "calc(100% - %s)" % ((LEFT_NAV_MENU_ITEM_ICON_WIDTH_VALUE * 2)px)
@@ -123,5 +129,5 @@
 .left-nav-menu-item-component.active.collapsed .primary-item
 .left-nav-menu-item-component.collapsed .primary-item:hover
   background initial
-  color LEFT_NAV_MENU_ITEM_ORD_TEXT_COLOR
+  color LEFT_NAV_MENU_ITEM_PRIMARY_ORD_TEXT_COLOR
 

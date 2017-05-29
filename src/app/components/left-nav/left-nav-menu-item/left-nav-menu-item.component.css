@@ -8,10 +8,16 @@
 .left-nav-menu-item-component .secondary-item {
   display: flex;
   align-items: center;
-  background-color: #282f32;
-  color: #6c7c83;
   font-size: 12px;
   cursor: pointer;
+}
+.left-nav-menu-item-component .primary-item {
+  background-color: #282f32;
+  color: #6c7c83;
+}
+.left-nav-menu-item-component .secondary-item {
+  background-color: #172227;
+  color: #6c7c83;
 }
 .left-nav-menu-item-component .label {
   width: calc(100% - 96px);
