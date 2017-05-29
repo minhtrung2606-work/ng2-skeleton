@@ -12,6 +12,7 @@ export class LeftNavComponent implements OnInit {
 
   @Input() activeIcon: string;
   @Input() inActiveIcon: string;
+  @Input() subMenuItemIcon: string;
   @Input() collapsed: boolean;
   @Input() menuItemList: Array<LeftNavMenuItem>;
 

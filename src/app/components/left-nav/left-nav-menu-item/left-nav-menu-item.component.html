@@ -17,7 +17,8 @@
        [ngClass]="{'active': subMenuItem.isActive()}"
        *ngFor="let subMenuItem of menuItem.getSubMenuItemList()">
     <span class="start-icon">
-      <i class="fa {{subMenuItem.getStartIcon() || 'fa-angle-right'}}"></i>
+      <i class="fa {{subMenuItemIcon || subMenuItem.getStartIcon() || 'fa-angle-right'}}">
+      </i>
     </span>
     <span class="label">{{subMenuItem.getLabel()}}</span>
     <span *ngIf="!subMenuItem.isStatistic()" class="end-icon">

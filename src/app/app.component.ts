@@ -11,15 +11,10 @@ import * as _ from 'lodash';
 })
 export class AppComponent {
   private leftNavItemList: Array<LeftNavMenuItem>;
-  private activeIcon: string;
-  private inActiveIcon: string;
 
   constructor() {
     let productCategory = getElectronicProductsCategory();
     this.leftNavItemList = buildLeftNavItemList(productCategory);
-    this.activeIcon = 'fa-caret-down';
-    this.inActiveIcon = 'fa-caret-right';
-    this.inActiveIcon = 'fa-caret-right';
   }
 }
 

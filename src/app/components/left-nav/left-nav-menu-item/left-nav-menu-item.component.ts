@@ -10,6 +10,7 @@ export class LeftNavMenuItemComponent implements OnInit {
   @Input() menuItem: LeftNavMenuItem;
   @Input() activeIcon: string;
   @Input() inActiveIcon: string;
+  @Input() subMenuItemIcon: string;
   @Input() collapsed: boolean;
 
   @Output() onMenuItemClicked: EventEmitter<LeftNavMenuItem>;
