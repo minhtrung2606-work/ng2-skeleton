@@ -4,8 +4,9 @@
   height: 100vh;
 }
 .left-nav-component .left-nav-menu-item-list {
-  background-color: #282f32;
+  background-color: #1a1c1d;
   width: 250px;
+  height: 100%;
 }
 .left-nav-component .left-nav-menu-item-list.collapsed {
   width: 48px;
