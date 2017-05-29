@@ -117,9 +117,11 @@
   opacity: 1;
   transition: min-height 150ms, height 1000ms 250ms, opacity 500ms;
 }
+.left-nav-menu-item-component .primary-item:hover .end-icon.statistic .count,
 .left-nav-menu-item-component.active .primary-item .end-icon.statistic .count {
   box-shadow: 0 0 0 1px #d9e3e8;
 }
+.left-nav-menu-item-component .secondary-item:hover .end-icon.statistic .count,
 .left-nav-menu-item-component .secondary-item.active .end-icon.statistic .count {
   box-shadow: 0 0 0 1px #dbf4ff;
 }
