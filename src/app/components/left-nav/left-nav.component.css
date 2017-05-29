@@ -1,11 +1,13 @@
 .left-nav-component {
   display: flex;
   align-items: flex-start;
-  width: 250px;
   height: 100vh;
-  background-color: #282f32;
 }
-.left-nav-component.collapsed {
+.left-nav-component .left-nav-menu-item-list {
+  background-color: #282f32;
+  width: 250px;
+}
+.left-nav-component .left-nav-menu-item-list.collapsed {
   width: 48px;
   transition: width 250ms;
 }
