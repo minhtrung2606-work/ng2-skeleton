@@ -42,10 +42,10 @@ function buildLeftNavItemList(productCategory) {
 
       _.each(productCat.itemList, function (prod) {
         let subMenuItem = new LeftNavMenuItem(prod.label);
-        subMenuItem
-          .setStatistic(true)
-          .setCount(prod.count)
-        ;
+        //subMenuItem
+        //  .setStatistic(true)
+        //  .setCount(prod.count)
+        //;
 
         menuItem.addSubMenuItem(subMenuItem);
       });
