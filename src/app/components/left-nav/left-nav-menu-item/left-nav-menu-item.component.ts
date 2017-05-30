@@ -15,19 +15,15 @@ export class LeftNavMenuItemComponent implements OnInit {
 
   @Output() onMenuItemClicked: EventEmitter<LeftNavMenuItem>;
   @Output() onSubMenuItemClicked: EventEmitter<LeftNavMenuItem>;
+  @Output() onMenuItemStartIconClicked: EventEmitter<LeftNavMenuItem>;
 
   constructor() {
     this.onMenuItemClicked = new EventEmitter();
     this.onSubMenuItemClicked = new EventEmitter();
+    this.onMenuItemStartIconClicked = new EventEmitter();
   }
 
   ngOnInit() {
-    if (!this.activeIcon) {
-      this.activeIcon = 'fa-angle-down';
-    }
-    if (!this.inActiveIcon) {
-      this.inActiveIcon = 'fa-angle-right';
-    }
   }
 
   onPrimaryItemClicked(menuItem: LeftNavMenuItem): void {
@@ -44,6 +40,10 @@ export class LeftNavMenuItemComponent implements OnInit {
     } else {
       return this.inActiveIcon;
     }
+  }
+
+  onPrimaryItemStartIconClicked(menuItem: LeftNavMenuItem): void {
+    this.onMenuItemStartIconClicked.emit(menuItem);
   }
 
 }

@@ -10,15 +10,18 @@ export class LeftNavComponent implements OnInit {
   private currentMenuItem: LeftNavMenuItem;
   private currentSubMenuItem: LeftNavMenuItem;
 
+  private collapsed: boolean;
+  private headerMenuItem: LeftNavMenuItem;
+
   @Input() activeIcon: string;
   @Input() inActiveIcon: string;
   @Input() subMenuItemIcon: string;
-  @Input() collapsed: boolean;
   @Input() menuItemList: Array<LeftNavMenuItem>;
   @Output() onMenuItemClicked: EventEmitter<LeftNavMenuItem>;
 
   constructor() {
     this.onMenuItemClicked = new EventEmitter<LeftNavMenuItem>();
+    this.headerMenuItem = new LeftNavMenuItem('Management Tool').setStartIcon('fa-bars').setActive(true);
   }
 
   ngOnInit() {
@@ -69,6 +72,10 @@ export class LeftNavComponent implements OnInit {
     this.currentSubMenuItem
       .setActive(true)
     ;
+  }
+
+  onHeaderLeftNavMenuItemClicked(): void {
+    this.collapsed = !this.collapsed;
   }
 
 }
