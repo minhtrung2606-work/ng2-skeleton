@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { SideBarMenuItem } from './side-bar-menu-item/model/side-bar-menu-item';
 
 @Component({
-  selector: 'app-side-bar',
+  selector: 'side-bar',
   templateUrl: './side-bar.component.html',
   styleUrls: ['./side-bar.component.css']
 })
@@ -32,7 +32,7 @@ export class SideBarComponent implements OnInit {
     }
   }
 
-  onMenuItemClicked(menuItem: SideBarMenuItem): void {
+  onSideBarMenuItemClicked(menuItem: SideBarMenuItem): void {
     if (this.collapsed) {
       // Do nothing when collapsed
       this.onMenuItemClicked.emit(menuItem);
@@ -61,7 +61,7 @@ export class SideBarComponent implements OnInit {
     ;
   }
 
-  onSubMenuItemClicked(subMenuItem: SideBarMenuItem): void {
+  onSideBarSubMenuItemClicked(subMenuItem: SideBarMenuItem): void {
     if (this.currentSubMenuItem) {
       // Remove current active sub menu item before activating another one
       this.currentSubMenuItem
@@ -76,7 +76,7 @@ export class SideBarComponent implements OnInit {
     ;
   }
 
-  onMenuItemIconClicked(): void {
+  onSideBarMenuItemIconClicked(): void {
     this.collapsed = !this.collapsed;
   }
 

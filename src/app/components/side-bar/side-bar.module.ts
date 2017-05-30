@@ -7,6 +7,7 @@ import { SideBarMenuItemComponent } from './side-bar-menu-item/side-bar-menu-ite
   imports: [
     CommonModule
   ],
-  declarations: [SideBarComponent, SideBarMenuItemComponent]
+  declarations: [SideBarComponent, SideBarMenuItemComponent],
+  exports: [SideBarComponent, SideBarMenuItemComponent]
 })
 export class SideBarModule { }

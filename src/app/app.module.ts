@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
-import { LeftNavModule } from './components/left-nav/left-nav.module';
+import { SideBarModule } from './components/side-bar/side-bar.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { LeftNavModule } from './components/left-nav/left-nav.module';
     BrowserModule,
     FormsModule,
     HttpModule,
-    LeftNavModule
+    SideBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

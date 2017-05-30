@@ -2,7 +2,7 @@
   <div class="side-bar-menu-item-list" [ngClass]="{'collapsed': collapsed}">
     <side-bar-menu-item [menuItem]="headerMenuItem"
                         [collapsed]="collapsed"
-                        (onMenuItemIconClicked)="onMenuItemIconClicked($event)">
+                        (onMenuItemIconClicked)="onSideBarMenuItemIconClicked($event)">
     </side-bar-menu-item>
     <side-bar-menu-item *ngFor="let menuItem of menuItemList"
                         [menuItem]="menuItem"
@@ -10,8 +10,8 @@
                         [inActiveIcon]="inActiveIcon"
                         [subMenuItemIcon]="subMenuItemIcon"
                         [collapsed]="collapsed"
-                        (onMenuItemClicked)="onMenuItemClicked($event)"
-                        (onSubMenuItemClicked)="onSubMenuItemClicked($event)">
+                        (onMenuItemClicked)="onSideBarMenuItemClicked($event)"
+                        (onSubMenuItemClicked)="onSideBarSubMenuItemClicked($event)">
     </side-bar-menu-item>
   </div>
 </div>
