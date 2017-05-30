@@ -58,8 +58,8 @@
 }
 /*---End icon as Statistic*/
 .left-nav-menu-item-component .end-icon.statistic .count {
-  background-color: #00b0ff;
-  color: #dbf4ff;
+  background-color: #455a64;
+  color: rgba(255,255,255,0.87);
   padding: 6px 8px;
   border-radius: 50px;
 }
