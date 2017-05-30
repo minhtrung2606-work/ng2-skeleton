@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { LeftNavMenuItem } from './left-nav-menu-item/model/left-nav-menu-item';
 
 @Component({
@@ -15,8 +15,11 @@ export class LeftNavComponent implements OnInit {
   @Input() subMenuItemIcon: string;
   @Input() collapsed: boolean;
   @Input() menuItemList: Array<LeftNavMenuItem>;
+  @Output() onMenuItemClicked: EventEmitter<LeftNavMenuItem>;
 
-  constructor() { }
+  constructor() {
+    this.onMenuItemClicked = new EventEmitter<LeftNavMenuItem>();
+  }
 
   ngOnInit() {
     if (!this.menuItemList) {
@@ -27,6 +30,7 @@ export class LeftNavComponent implements OnInit {
   onLeftNavMenuItemClicked(menuItem: LeftNavMenuItem): void {
     if (this.collapsed) {
       // Do nothing when collapsed
+      this.onMenuItemClicked.emit(menuItem);
       return;
     }
 
@@ -65,10 +69,6 @@ export class LeftNavComponent implements OnInit {
     this.currentSubMenuItem
       .setActive(true)
     ;
-  }
-
-  toggleCollapse(): void {
-    this.collapsed = !this.collapsed;
   }
 
 }

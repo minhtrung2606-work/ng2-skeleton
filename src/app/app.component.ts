@@ -11,10 +11,26 @@ import * as _ from 'lodash';
 })
 export class AppComponent {
   private leftNavItemList: Array<LeftNavMenuItem>;
+  private collapsed: boolean;
 
   constructor() {
     let productCategory = getElectronicProductsCategory();
     this.leftNavItemList = buildLeftNavItemList(productCategory);
+
+    this.collapsed = true;
+  }
+
+  onBarsIconClicked(): void {
+    // Toggle show/hide left nav
+    this.collapsed = !this.collapsed;
+  }
+
+  onMenuItemClicked(): void {
+    if (this.collapsed) {
+      this.collapsed = false;
+    } else {
+      // Nothing needs to be done now
+    }
   }
 }
 
