@@ -1,0 +1,14 @@
+.side-bar-component {
+  display: flex;
+  align-items: flex-start;
+  height: 100vh;
+}
+.side-bar-component .side-bar-menu-item-list {
+  background-color: #455A64;
+  width: 250px;
+  height: 100%;
+}
+.side-bar-component .side-bar-menu-item-list.collapsed {
+  width: 48px;
+  transition: width 100ms;
+}

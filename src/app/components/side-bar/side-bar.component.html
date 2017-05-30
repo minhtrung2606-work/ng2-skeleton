@@ -1,3 +1,17 @@
-<p>
-  side-bar works!
-</p>
+<div class="side-bar-component">
+  <div class="side-bar-menu-item-list" [ngClass]="{'collapsed': collapsed}">
+    <side-bar-menu-item [menuItem]="headerMenuItem"
+                        [collapsed]="collapsed"
+                        (onMenuItemIconClicked)="onMenuItemIconClicked($event)">
+    </side-bar-menu-item>
+    <side-bar-menu-item *ngFor="let menuItem of menuItemList"
+                        [menuItem]="menuItem"
+                        [activeIcon]="activeIcon"
+                        [inActiveIcon]="inActiveIcon"
+                        [subMenuItemIcon]="subMenuItemIcon"
+                        [collapsed]="collapsed"
+                        (onMenuItemClicked)="onMenuItemClicked($event)"
+                        (onSubMenuItemClicked)="onSubMenuItemClicked($event)">
+    </side-bar-menu-item>
+  </div>
+</div>
