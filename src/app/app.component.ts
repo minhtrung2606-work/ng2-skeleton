@@ -37,7 +37,7 @@ export class AppComponent {
 function buildsideBarItemList(productCategory) {
   if (productCategory) {
     return _.map(productCategory, function (productCat) {
-      var menuItem = new SideBarMenuItem(productCat.label);
+      var menuItem = new SideBarMenuItem(productCat.label).setIcon(productCat.icon);
 
       _.each(productCat.itemList, function (prod) {
         let subMenuItem = new SideBarMenuItem(prod.label);
