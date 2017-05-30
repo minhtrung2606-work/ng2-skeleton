@@ -10,5 +10,5 @@
 }
 .left-nav-component .left-nav-menu-item-list.collapsed {
   width: 48px;
-  transition: width 250ms;
+  transition: width 100ms;
 }

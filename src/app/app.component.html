@@ -2,5 +2,8 @@
   <left-nav [menuItemList]="leftNavItemList"
             [activeIcon]="'fa-caret-down'"
             [inActiveIcon]="'fa-caret-right'"
-            [subMenuItemIcon]="'fa-angle-double-right'"></left-nav>
+            [collapsed]="collapsed"
+            [subMenuItemIcon]="'fa-angle-double-right'"
+            (onMenuItemClicked)="onMenuItemClicked($event)"></left-nav>
+  <span><i class="fa fa-bars" (click)="onBarsIconClicked()"></i></span>
 </div>
