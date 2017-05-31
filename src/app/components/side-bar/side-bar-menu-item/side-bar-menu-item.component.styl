@@ -23,7 +23,7 @@
   background-color SIDE_BAR_MENU_ITEM_SECONDARY_ORD_BG_COLOR
   color SIDE_BAR_MENU_ITEM_SECONDARY_ORD_TEXT_COLOR
 
-.side-bar-menu-item-component .label
+.side-bar-menu-item-component .menu-label
   width "calc(100% - %s)" % ((SIDE_BAR_MENU_ITEM_ICON_WIDTH_VALUE * 2)px)
   opacity 1
   display flex
@@ -44,14 +44,14 @@
 /*--Primary item*/
 .side-bar-menu-item-component .primary-item
 .side-bar-menu-item-component .primary-item .start-icon
-.side-bar-menu-item-component .primary-item .label
+.side-bar-menu-item-component .primary-item .menu-label
 .side-bar-menu-item-component .primary-item .end-icon
   min-height SIDE_BAR_MENU_ITEM_PRIMARY_HEIGHT
 
 /*--Secondary item*/
 .side-bar-menu-item-component .secondary-item
 .side-bar-menu-item-component .secondary-item .start-icon
-.side-bar-menu-item-component .secondary-item .label
+.side-bar-menu-item-component .secondary-item .menu-label
 .side-bar-menu-item-component .secondary-item .end-icon
   height 0
   min-height 0
@@ -62,8 +62,9 @@
 .side-bar-menu-item-component .end-icon.statistic .count
   background-color SIDE_BAR_MENU_ITEM_SECONDARY_STATISTIC_BG_COLOR
   color SIDE_BAR_MENU_ITEM_SECONDARY_STATISTIC_TEXT_COLOR
-  padding 6px 8px
+  padding 7px 9px 3px 10px
   border-radius 50px
+  font-size inherit
 
 .side-bar-menu-item-component .end-icon.statistic
   align-items flex-end
@@ -78,7 +79,7 @@
 .side-bar-menu-item-component.collapsed .secondary-item
   display none
 
-.side-bar-menu-item-component.collapsed .label
+.side-bar-menu-item-component.collapsed .menu-label
   min-height 0
   width 0
   height 0
@@ -86,7 +87,7 @@
   font-size 0
 
 .side-bar-menu-item-component.collapsed
-.side-bar-menu-item-component.collapsed .label
+.side-bar-menu-item-component.collapsed .menu-label
   transition width 250ms
 
 .side-bar-menu-item-component.collapsed .end-icon
@@ -115,7 +116,7 @@
 
 .side-bar-menu-item-component.active .secondary-item
 .side-bar-menu-item-component.active .secondary-item .start-icon
-.side-bar-menu-item-component.active .secondary-item .label
+.side-bar-menu-item-component.active .secondary-item .menu-label
 .side-bar-menu-item-component.active .secondary-item .end-icon
   height auto
   min-height SIDE_BAR_MENU_ITEM_SECONDARY_HEIGHT

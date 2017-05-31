@@ -4,7 +4,7 @@
     <span class="start-icon" (click)="onPrimaryItemIconClicked(menuItem)">
       <i class="fa {{menuItem.getIcon() || 'fa-th-large'}}"></i>
     </span>
-    <span class="label">{{menuItem.getLabel()}}</span>
+    <span class="menu-label">{{menuItem.getLabel()}}</span>
     <span *ngIf="!menuItem.isStatistic()" class="end-icon">
       <i class="fa {{getActiveIcon()}}"></i>
     </span>
@@ -19,7 +19,7 @@
     <span class="start-icon">
       <i class="fa {{subMenuItemIcon || subMenuItem.getIcon() || 'fa-angle-right'}}"></i>
     </span>
-    <span class="label">{{subMenuItem.getLabel()}}</span>
+    <span class="menu-label">{{subMenuItem.getLabel()}}</span>
     <span *ngIf="subMenuItem.isStatistic()" class="end-icon statistic">
       <small class="count">{{subMenuItem.getCount()}}</small>
     </span>
