@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { AppComponent } from './app.component';
 
 import { SideBarModule } from './components/side-bar/side-bar.module';
@@ -15,6 +17,7 @@ import { SideBarModule } from './components/side-bar/side-bar.module';
     BrowserModule,
     FormsModule,
     HttpModule,
+    NgbModule.forRoot(),
     SideBarModule
   ],
   providers: [],
