@@ -7,12 +7,12 @@ import { SideBarMenuItem } from './side-bar-menu-item/model/side-bar-menu-item';
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent implements OnInit {
-
   private currentMenuItem: SideBarMenuItem;
   private currentSubMenuItem: SideBarMenuItem;
 
   private collapsed: boolean;
   private headerMenuItem: SideBarMenuItem;
+  private searchMenuItem: SideBarMenuItem;
 
   @Input() activeIcon: string;
   @Input() inActiveIcon: string;
@@ -24,6 +24,7 @@ export class SideBarComponent implements OnInit {
     this.onMenuItemClicked = new EventEmitter<SideBarMenuItem>();
     this.headerMenuItem = new SideBarMenuItem('Management Tool')
       .setIcon('fa-bars').setActive(true);
+    this.searchMenuItem = new SideBarMenuItem('').setIcon('fa-search');
   }
 
   ngOnInit() {

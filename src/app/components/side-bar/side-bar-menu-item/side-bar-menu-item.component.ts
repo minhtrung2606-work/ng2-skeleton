@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostBinding } from '@angular/core';
 import { SideBarMenuItem } from './model/side-bar-menu-item';
 
 @Component({
@@ -7,6 +7,7 @@ import { SideBarMenuItem } from './model/side-bar-menu-item';
   styleUrls: ['./side-bar-menu-item.component.css']
 })
 export class SideBarMenuItemComponent implements OnInit {
+  @HostBinding('attr.class') cssClass = 'side-bar-menu-item';
 
   @Input() menuItem: SideBarMenuItem;
   @Input() activeIcon: string;

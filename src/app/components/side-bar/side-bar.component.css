@@ -12,3 +12,18 @@
   width: 48px;
   transition: width 100ms;
 }
+.side-bar-component .side-bar-search-box .search-control-wrapper {
+  position: relative;
+}
+.side-bar-component .side-bar-search-box .search-control {
+  width: 90%;
+  margin: 9px auto;
+}
+.side-bar-component .side-bar-search-box .side-bar-menu-item,
+.side-bar-component .side-bar-search-box.collapsed .search-control {
+  display: none;
+}
+.side-bar-component .side-bar-search-box .search-control,
+.side-bar-component .side-bar-search-box.collapsed .side-bar-menu-item {
+  display: block;
+}

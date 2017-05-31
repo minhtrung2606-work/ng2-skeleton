@@ -1,9 +1,21 @@
 <div class="side-bar-component">
+
+  <!-- TODO: move collapsed CSS class upto .side-bar-component class -->
+
   <div class="side-bar-menu-item-list" [ngClass]="{'collapsed': collapsed}">
     <side-bar-menu-item [menuItem]="headerMenuItem"
                         [collapsed]="collapsed"
                         (onMenuItemIconClicked)="onSideBarMenuItemIconClicked($event)">
     </side-bar-menu-item>
+    <div class="side-bar-search-box" [ngClass]="{'collapsed': collapsed}">
+      <side-bar-menu-item [menuItem]="searchMenuItem"
+                          [collapsed]="collapsed"
+                          (onMenuItemIconClicked)="onSideBarMenuItemIconClicked($event)"  >
+      </side-bar-menu-item>
+      <div class="search-control-wrapper">
+        <input class="form-control input-sm search-control">
+      </div>
+    </div>
     <side-bar-menu-item *ngFor="let menuItem of menuItemList"
                         [menuItem]="menuItem"
                         [activeIcon]="activeIcon"
