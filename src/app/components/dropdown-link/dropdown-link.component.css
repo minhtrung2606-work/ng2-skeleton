@@ -1,0 +1,7 @@
+.dropdown-link-component {
+  position: relative;
+}
+.dropdown-link-component.to-left .dropdown-menu {
+  right: 0;
+  left: auto;
+}

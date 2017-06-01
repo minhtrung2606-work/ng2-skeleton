@@ -1,4 +1,4 @@
-<div class="dropdown-link-component">
+<div class="dropdown-link-component {{helperCssClass}}">
   <div ngbDropdown class="d-inline-block">
     <a href="#" id="dropdown-link-{{getId()}}" ngbDropdownToggle>{{getLabel()}}</a>
     <ul class="dropdown-menu" aria-labelledby="dropdown-link">
@@ -6,9 +6,9 @@
         {{menuItem.getLabel()}}
       </li>
       <li class="dropdown-item" *ngIf="isMenuItemListEmpty()">
-            <span><small>
-              <em>Empty menu item list</em>
-            </small></span>
+        <span><small>
+          <em>Empty menu item list</em>
+        </small></span>
       </li>
     </ul>
   </div>

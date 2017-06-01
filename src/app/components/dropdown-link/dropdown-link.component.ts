@@ -9,6 +9,7 @@ import { DropdownLinkItem } from './model/dropdown-link-item';
 export class DropdownLinkComponent implements OnInit {
   @Input() id: string;
   @Input() label: string;
+  @Input() helperCssClass: string;
   @Input() menuItemList: Array<DropdownLinkItem>;
 
   constructor() {
