@@ -1,19 +1,15 @@
 <div class="dropdown-link-component">
-  <div class="row">
-    <div class="col">
-      <div ngbDropdown class="d-inline-block">
-        <a href="#" id="{{dropdown-link-getId()}}" ngbDropdownToggle>{{getLabel()}}</a>
-        <ul class="dropdown-menu" aria-labelledby="dropdown-link}}">
-          <li class="dropdown-item" *ngFor="let menuItem of getMenuItemList()">
-            {{menuItem.getLabel()}}
-          </li>
-          <li class="dropdown-item" *ngIf="isMenuItemListEmpty()">
+  <div ngbDropdown class="d-inline-block">
+    <a href="#" id="{{dropdown-link-getId()}}" ngbDropdownToggle>{{getLabel()}}</a>
+    <ul class="dropdown-menu" aria-labelledby="dropdown-link}}">
+      <li class="dropdown-item" *ngFor="let menuItem of getMenuItemList()">
+        {{menuItem.getLabel()}}
+      </li>
+      <li class="dropdown-item" *ngIf="isMenuItemListEmpty()">
             <span><small>
               <em>Empty menu item list</em>
             </small></span>
-          </li>
-        </ul>
-      </div>
-    </div>
+      </li>
+    </ul>
   </div>
 </div>

@@ -4,5 +4,9 @@
             [inActiveIcon]="'fa-caret-right'"
             [subMenuItemIcon]="'fa-angle-right'"
             (onMenuItemClicked)="onMenuItemClicked($event)"></side-bar>
-  <dropdown-link [id]="'my-own-id'" [label]="'example@domain'"></dropdown-link>
+  <div class="root-app-header">
+    <div class="header-current-user">
+      <dropdown-link [id]="'my-own-id'" [label]="'example@domain'"></dropdown-link>
+    </div>
+  </div>
 </div>
