@@ -1,7 +1,7 @@
 <div class="dropdown-link-component">
   <div ngbDropdown class="d-inline-block">
-    <a href="#" id="{{dropdown-link-getId()}}" ngbDropdownToggle>{{getLabel()}}</a>
-    <ul class="dropdown-menu" aria-labelledby="dropdown-link}}">
+    <a href="#" id="dropdown-link-{{getId()}}" ngbDropdownToggle>{{getLabel()}}</a>
+    <ul class="dropdown-menu" aria-labelledby="dropdown-link">
       <li class="dropdown-item" *ngFor="let menuItem of getMenuItemList()">
         {{menuItem.getLabel()}}
       </li>
