@@ -26,7 +26,6 @@
   opacity: 1;
   display: flex;
   align-items: center;
-  transition: width 250ms, font-size 0ms 250ms, opacity 150ms;
 }
 .side-bar-menu-item-component .start-icon,
 .side-bar-menu-item-component .end-icon {
@@ -113,7 +112,7 @@
   height: auto;
   min-height: 40px;
   opacity: 1;
-  transition: min-height 150ms, height 1000ms 250ms, opacity 500ms;
+  transition: min-height 150ms, height 1000ms 250ms;
 }
 .side-bar-menu-item-component .primary-item:hover .end-icon.statistic .count,
 .side-bar-menu-item-component.active .primary-item .end-icon.statistic .count {
