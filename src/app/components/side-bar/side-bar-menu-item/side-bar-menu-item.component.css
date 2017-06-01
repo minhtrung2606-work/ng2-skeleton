@@ -8,7 +8,7 @@
 .side-bar-menu-item-component .secondary-item {
   display: flex;
   align-items: center;
-  font-size: 12px;
+  font-size: 0.8rem;
 }
 /*cursor pointer*/
 /*border-left 3px solid transparent*/
@@ -22,7 +22,7 @@
   color: rgba(255,255,255,0.87);
 }
 .side-bar-menu-item-component .menu-label {
-  width: calc(100% - 96px);
+  width: calc(100% - 6rem);
   opacity: 1;
   display: flex;
   align-items: center;
@@ -35,7 +35,7 @@
 }
 .side-bar-menu-item-component .start-icon,
 .side-bar-menu-item-component .end-icon {
-  min-width: 48px;
+  min-width: 3rem;
 }
 /*Individual element*/
 /*--Primary item*/
@@ -43,7 +43,7 @@
 .side-bar-menu-item-component .primary-item .start-icon,
 .side-bar-menu-item-component .primary-item .menu-label,
 .side-bar-menu-item-component .primary-item .end-icon {
-  min-height: 48px;
+  min-height: 3rem;
 }
 /*--Secondary item*/
 .side-bar-menu-item-component .secondary-item,
@@ -59,19 +59,19 @@
 .side-bar-menu-item-component .end-icon.statistic .count {
   background-color: #455a64;
   color: rgba(255,255,255,0.87);
-  padding: 7px 9px 3px 10px;
-  border-radius: 50px;
+  padding: 0.3rem 0.7rem;
+  border-radius: 50rem;
   font-size: inherit;
 }
 .side-bar-menu-item-component .end-icon.statistic {
   align-items: flex-end;
   flex-direction: column;
-  margin-right: 8px;
+  margin-right: 0.5rem;
 }
 /*States*/
 /*--Collapsed*/
 .side-bar-menu-item-component.collapsed {
-  width: 48px;
+  width: 3rem;
 }
 .side-bar-menu-item-component.collapsed .secondary-item {
   display: none;
@@ -110,7 +110,7 @@
 .side-bar-menu-item-component.active .secondary-item .menu-label,
 .side-bar-menu-item-component.active .secondary-item .end-icon {
   height: auto;
-  min-height: 40px;
+  min-height: 2.5rem;
   opacity: 1;
   transition: min-height 150ms, height 1000ms 250ms;
 }

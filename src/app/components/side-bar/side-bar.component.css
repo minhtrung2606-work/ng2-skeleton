@@ -5,11 +5,11 @@
 }
 .side-bar-component .side-bar-menu-item-list {
   background-color: #455A64;
-  width: 250px;
+  width: 15rem;
   height: 100%;
 }
 .side-bar-component .side-bar-menu-item-list.collapsed {
-  width: 48px;
+  width: 3rem;
   transition: width 100ms;
 }
 .side-bar-component .side-bar-search-box .search-control-wrapper {
@@ -17,7 +17,7 @@
 }
 .side-bar-component .side-bar-search-box .search-control {
   width: 90%;
-  margin: 5px auto;
+  margin: 0.3rem auto;
 }
 .side-bar-component .side-bar-search-box .side-bar-menu-item,
 .side-bar-component .side-bar-search-box.collapsed .search-control {
