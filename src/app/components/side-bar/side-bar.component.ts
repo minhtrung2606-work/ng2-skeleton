@@ -77,8 +77,19 @@ export class SideBarComponent implements OnInit {
     ;
   }
 
-  onSideBarMenuItemIconClicked(): void {
-    this.collapsed = !this.collapsed;
+  onSideBarMenuItemIconClicked(menuItem: SideBarMenuItem): void {
+    if (this.collapsed) {
+      // If side bar was already collapsed, then expand it
+      this.collapsed = false;
+
+      // This is a hack to retain the active value of the menu item.
+      // It's because onSideBarMenuItemClicked will be called right after this method completely finishes
+      //   and that will change the active value of the menu item
+      this.onSideBarMenuItemClicked(menuItem);
+    } else if (this.headerMenuItem.equals(menuItem)) {
+      // Toggle it
+      this.collapsed = !this.collapsed;
+    }
   }
 
 }

@@ -60,4 +60,16 @@ export class SideBarMenuItem {
     this.subMenuItemList.push(subMenuItem);
     return this;
   }
+
+  equals(o: any): boolean {
+    if (!o || !(o instanceof SideBarMenuItem)) {
+      return false;
+    } else if (this === o) {
+      return true;
+    } else if (this.label === o.getLabel()) {
+      return  true;
+    } else {
+      return false;
+    }
+  }
 }

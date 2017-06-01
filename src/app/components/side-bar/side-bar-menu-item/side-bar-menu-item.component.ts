@@ -29,7 +29,9 @@ export class SideBarMenuItemComponent implements OnInit {
   }
 
   onPrimaryItemClicked(menuItem: SideBarMenuItem): void {
-    this.onMenuItemClicked.emit(menuItem);
+    if (!this.collapsed) {
+      this.onMenuItemClicked.emit(menuItem);
+    }
   }
 
   onSecondaryItemClicked(subMenuItem: SideBarMenuItem): void {
