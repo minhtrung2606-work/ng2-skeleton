@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 
 import { SideBarModule } from './components/side-bar/side-bar.module';
+import { DropdownLinkModule } from './components/dropdown-link/dropdown-link.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { SideBarModule } from './components/side-bar/side-bar.module';
     FormsModule,
     HttpModule,
     NgbModule.forRoot(),
-    SideBarModule
+
+    SideBarModule,
+    DropdownLinkModule
   ],
   providers: [],
   bootstrap: [AppComponent]
