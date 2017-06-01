@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DropdownLinkItem } from './model/dropdown-link-item';
 
 @Component({
@@ -7,16 +7,18 @@ import { DropdownLinkItem } from './model/dropdown-link-item';
   styleUrls: ['./dropdown-link.component.css']
 })
 export class DropdownLinkComponent implements OnInit {
-  private label: string;
-  private menuItemList: Array<DropdownLinkItem>;
+  @Input() id: string;
+  @Input() label: string;
+  @Input() menuItemList: Array<DropdownLinkItem>;
 
   constructor() {
-    this.label = 'abc@example.com.vn';
-    this.menuItemList = [];
   }
 
   ngOnInit() {
-    this.menuItemList.push(new DropdownLinkItem('Menu Item 1'));
+  }
+
+  getId(): string {
+    return this.id;
   }
 
   getLabel(): string {
@@ -25,6 +27,10 @@ export class DropdownLinkComponent implements OnInit {
 
   getMenuItemList(): Array<DropdownLinkItem> {
     return this.menuItemList;
+  }
+
+  isMenuItemListEmpty(): boolean {
+    return !this.menuItemList || this.menuItemList.length === 0;
   }
 
 }
