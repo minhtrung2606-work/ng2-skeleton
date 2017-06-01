@@ -40,6 +40,12 @@ export class SideBarComponent implements OnInit {
       return;
     }
 
+    if (this.headerMenuItem.equals(menuItem)) {
+      // Do nothing when clicking on header menu item
+      this.onMenuItemClicked.emit(menuItem);
+      return;
+    }
+
     if (menuItem.isActive()) {
       // Activated menu item is clicked again and de-activate it
       menuItem
