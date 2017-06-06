@@ -18,6 +18,7 @@ export class SideBarComponent implements OnInit, OnDestroy {
   private searchControl: FormControl;
   private searchValueChangesUnSubscribe: any;
   private inSearch: boolean;
+  private debounceSearching: Function;
 
   @Input() activeIcon: string;
   @Input() inActiveIcon: string;
@@ -32,6 +33,9 @@ export class SideBarComponent implements OnInit, OnDestroy {
     this.searchMenuItem = new SideBarMenuItem('Results').setActive(true);
     this.searchControl = new FormControl('');
     this.inSearch = false;
+    this.debounceSearching = _.debounce((value) => {
+      this.onSearchStrChanged(value);
+    }, 250);
   }
 
   isInSearch(): boolean {
@@ -58,7 +62,7 @@ export class SideBarComponent implements OnInit, OnDestroy {
     }
 
     this.searchValueChangesUnSubscribe = this.searchControl.valueChanges.subscribe((value) => {
-      this.onSearchStrChanged(value);
+      this.debounceSearching(value);
     });
   }
 
