@@ -7,7 +7,7 @@
                         [collapsed]="collapsed"
                         (onMenuItemIconClicked)="onSideBarMenuItemIconClicked($event)">
     </side-bar-menu-item>
-    <div class="side-bar-search-box" [ngClass]="{'collapsed': collapsed}">
+    <div class="side-bar-search-box" [ngClass]="{'collapsed': collapsed}" *ngIf="useSearch">
       <side-bar-menu-item [menuItem]="searchMenuItem"
                           [collapsed]="collapsed"
                           (onMenuItemIconClicked)="onSideBarMenuItemIconClicked($event)">

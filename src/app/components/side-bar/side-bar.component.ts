@@ -20,6 +20,7 @@ export class SideBarComponent implements OnInit, OnDestroy {
   private inSearch: boolean;
   private debounceSearching: Function;
 
+  @Input() useSearch: boolean;
   @Input() activeIcon: string;
   @Input() inActiveIcon: string;
   @Input() subMenuItemIcon: string;
