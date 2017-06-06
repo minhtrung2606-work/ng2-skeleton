@@ -4,7 +4,6 @@
   height: 100%;
 }
 .side-bar-component .side-bar-menu-item-list {
-  background-color: #455A64;
   width: 15rem;
   height: 100%;
 }
@@ -35,4 +34,10 @@
   position: absolute;
   top: auto;
   right: 1.5rem;
+}
+.side-bar-component .side-bar-menu-item-list {
+  background-color: #455A64;
+}
+.side-bar-component .side-bar-search-box .search-icon {
+  color: #455A64;
 }
