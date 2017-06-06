@@ -1,6 +1,7 @@
 .root-app-component {
   display: flex;
   background-color: #e5e5e5;
+  min-height: 100vh;
 }
 .root-app-component .root-app-header {
   display: flex;
