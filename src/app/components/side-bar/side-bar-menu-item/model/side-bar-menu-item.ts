@@ -61,6 +61,11 @@ export class SideBarMenuItem {
     return this;
   }
 
+  emptySubMenuItem(): SideBarMenuItem {
+    this.subMenuItemList = [];
+    return this;
+  }
+
   equals(o: any): boolean {
     if (!o || !(o instanceof SideBarMenuItem)) {
       return false;

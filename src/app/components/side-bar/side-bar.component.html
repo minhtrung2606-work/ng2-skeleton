@@ -14,7 +14,8 @@
       </side-bar-menu-item>
       <div class="search-control-wrapper">
         <input type="text" class="form-control input-sm search-control" [formControl]="searchControl">
-        <i class="fa fa-search search-icon"></i>
+        <i class="fa search-icon" [ngClass]="{'fa-times': isInSearch(), 'fa-search': !isInSearch()}"
+           (click)="stopSearching()"></i>
       </div>
     </div>
     <side-bar-menu-item *ngFor="let menuItem of getMenuItemList()"

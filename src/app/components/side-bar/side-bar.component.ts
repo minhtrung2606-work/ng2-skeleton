@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { SideBarMenuItem } from './side-bar-menu-item/model/side-bar-menu-item';
 import { FormControl } from '@angular/forms';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'side-bar',
@@ -16,7 +17,7 @@ export class SideBarComponent implements OnInit, OnDestroy {
   private searchMenuItem: SideBarMenuItem;
   private searchControl: FormControl;
   private searchValueChangesUnSubscribe: any;
-  private menuItemListBk: Array<SideBarMenuItem>;
+  private inSearch: boolean;
 
   @Input() activeIcon: string;
   @Input() inActiveIcon: string;
@@ -28,12 +29,27 @@ export class SideBarComponent implements OnInit, OnDestroy {
     this.onMenuItemClicked = new EventEmitter<SideBarMenuItem>();
     this.headerMenuItem = new SideBarMenuItem('Management Tool')
       .setIcon('fa-bars').setActive(true);
-    this.searchMenuItem = new SideBarMenuItem('').setIcon('fa-search');
-    this.searchControl = new FormControl('test');
+    this.searchMenuItem = new SideBarMenuItem('Results').setActive(true);
+    this.searchControl = new FormControl('');
+    this.inSearch = false;
+  }
+
+  isInSearch(): boolean {
+    return this.inSearch;
   }
 
   getMenuItemList(): Array<SideBarMenuItem> {
-    return this.menuItemList;
+    if (this.inSearch) {
+      return [this.searchMenuItem];
+    } else {
+      return this.menuItemList;
+    }
+  }
+
+  stopSearching(): void {
+    // This function only sets the value of search input control to empty
+    // All remaining things will be done with onSearchStrChanged
+    this.searchControl.setValue('');
   }
 
   ngOnInit() {
@@ -116,8 +132,28 @@ export class SideBarComponent implements OnInit, OnDestroy {
   }
 
   private onSearchStrChanged(value) {
+    this.inSearch = !!value;
     if (value) {
-      this.menuItemListBk = this.menuItemList.concat();
+      this.searchMenuItem
+        .setLabel('Results')
+        .setActive(true)
+        .emptySubMenuItem()
+      ;
+
+      _.each(this.menuItemList, (menuItem: SideBarMenuItem) => {
+        _.each(menuItem.getSubMenuItemList(), (subMenuItem: SideBarMenuItem) => {
+          if (subMenuItem.getLabel().toUpperCase().indexOf(value.toUpperCase()) > -1) {
+            this.searchMenuItem.addSubMenuItem(subMenuItem);
+          }
+        });
+      });
+
+      this.searchMenuItem
+        .setLabel([
+          this.searchMenuItem.getSubMenuItemList().length,
+          ' ',
+          'Results'].join(''))
+      ;
     }
   }
 
