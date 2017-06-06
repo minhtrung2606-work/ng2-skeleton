@@ -14,6 +14,8 @@
 }
 .side-bar-component .side-bar-search-box .search-control-wrapper {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 .side-bar-component .side-bar-search-box .search-control {
   width: 90%;
@@ -26,4 +28,9 @@
 .side-bar-component .side-bar-search-box .search-control,
 .side-bar-component .side-bar-search-box.collapsed .side-bar-menu-item {
   display: block;
+}
+.side-bar-component .side-bar-search-box .search-icon {
+  position: absolute;
+  top: auto;
+  right: 1.5rem;
 }

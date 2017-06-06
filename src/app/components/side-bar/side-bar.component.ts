@@ -1,18 +1,22 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { SideBarMenuItem } from './side-bar-menu-item/model/side-bar-menu-item';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'side-bar',
   templateUrl: './side-bar.component.html',
   styleUrls: ['./side-bar.component.css']
 })
-export class SideBarComponent implements OnInit {
+export class SideBarComponent implements OnInit, OnDestroy {
   private currentMenuItem: SideBarMenuItem;
   private currentSubMenuItem: SideBarMenuItem;
 
   private collapsed: boolean;
   private headerMenuItem: SideBarMenuItem;
   private searchMenuItem: SideBarMenuItem;
+  private searchControl: FormControl;
+  private searchValueChangesUnSubscribe: any;
+  private menuItemListBk: Array<SideBarMenuItem>;
 
   @Input() activeIcon: string;
   @Input() inActiveIcon: string;
@@ -25,12 +29,25 @@ export class SideBarComponent implements OnInit {
     this.headerMenuItem = new SideBarMenuItem('Management Tool')
       .setIcon('fa-bars').setActive(true);
     this.searchMenuItem = new SideBarMenuItem('').setIcon('fa-search');
+    this.searchControl = new FormControl('test');
+  }
+
+  getMenuItemList(): Array<SideBarMenuItem> {
+    return this.menuItemList;
   }
 
   ngOnInit() {
     if (!this.menuItemList) {
       this.menuItemList = [];
     }
+
+    this.searchValueChangesUnSubscribe = this.searchControl.valueChanges.subscribe((value) => {
+      this.onSearchStrChanged(value);
+    });
+  }
+
+  ngOnDestroy() {
+    this.searchValueChangesUnSubscribe();
   }
 
   onSideBarMenuItemClicked(menuItem: SideBarMenuItem): void {
@@ -95,6 +112,12 @@ export class SideBarComponent implements OnInit {
     } else if (this.headerMenuItem.equals(menuItem)) {
       // Toggle it
       this.collapsed = !this.collapsed;
+    }
+  }
+
+  private onSearchStrChanged(value) {
+    if (value) {
+      this.menuItemListBk = this.menuItemList.concat();
     }
   }
 

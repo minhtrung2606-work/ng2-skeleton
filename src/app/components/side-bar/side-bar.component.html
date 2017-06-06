@@ -13,10 +13,11 @@
                           (onMenuItemIconClicked)="onSideBarMenuItemIconClicked($event)">
       </side-bar-menu-item>
       <div class="search-control-wrapper">
-        <input class="form-control input-sm search-control">
+        <input type="text" class="form-control input-sm search-control" [formControl]="searchControl">
+        <i class="fa fa-search search-icon"></i>
       </div>
     </div>
-    <side-bar-menu-item *ngFor="let menuItem of menuItemList"
+    <side-bar-menu-item *ngFor="let menuItem of getMenuItemList()"
                         [menuItem]="menuItem"
                         [activeIcon]="activeIcon"
                         [inActiveIcon]="inActiveIcon"
